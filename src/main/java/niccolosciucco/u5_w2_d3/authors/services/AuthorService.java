@@ -1,6 +1,7 @@
 package niccolosciucco.u5_w2_d3.authors.services;
 
 import niccolosciucco.u5_w2_d3.authors.entities.Author;
+import niccolosciucco.u5_w2_d3.authors.exceptions.NotFound;
 import niccolosciucco.u5_w2_d3.authors.payloads.AuthorPayload;
 import niccolosciucco.u5_w2_d3.authors.repositories.AuthorRepository;
 import org.springframework.data.domain.Page;
@@ -30,7 +31,7 @@ public class AuthorService {
 
     public Author findById(UUID id) {
         return this.authorRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Autore con ID " + id + " non trovato!"));
+                .orElseThrow(() -> new NotFound("Autore con ID " + id + " non trovato!"));
     }
 
     public Author put(UUID id, AuthorPayload updatedAuthor) {
