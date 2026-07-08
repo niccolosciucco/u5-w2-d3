@@ -3,6 +3,7 @@ package niccolosciucco.u5_w2_d3.authors.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -11,6 +12,7 @@ import java.util.UUID;
 @Table(name = "authors")
 @NoArgsConstructor
 @Getter
+@Setter
 public class Author {
     @Id
     @GeneratedValue
